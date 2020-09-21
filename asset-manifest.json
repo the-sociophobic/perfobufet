@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/perfobufet/static/css/main.33fd3933.chunk.css",
+    "main.js": "/perfobufet/static/js/main.53d3f9bf.chunk.js",
+    "main.js.map": "/perfobufet/static/js/main.53d3f9bf.chunk.js.map",
+    "runtime-main.js": "/perfobufet/static/js/runtime-main.fd209be5.js",
+    "runtime-main.js.map": "/perfobufet/static/js/runtime-main.fd209be5.js.map",
+    "static/js/2.4d182af3.chunk.js": "/perfobufet/static/js/2.4d182af3.chunk.js",
+    "static/js/2.4d182af3.chunk.js.map": "/perfobufet/static/js/2.4d182af3.chunk.js.map",
+    "index.html": "/perfobufet/index.html",
+    "precache-manifest.4d4194ae776c3b3a71d6145cfb1d2f0e.js": "/perfobufet/precache-manifest.4d4194ae776c3b3a71d6145cfb1d2f0e.js",
+    "service-worker.js": "/perfobufet/service-worker.js",
+    "static/css/main.33fd3933.chunk.css.map": "/perfobufet/static/css/main.33fd3933.chunk.css.map",
+    "static/js/2.4d182af3.chunk.js.LICENSE.txt": "/perfobufet/static/js/2.4d182af3.chunk.js.LICENSE.txt",
+    "static/media/Belysh.glb": "/perfobufet/static/media/Belysh.39c1a7b0.glb",
+    "static/media/Demidkin.glb": "/perfobufet/static/media/Demidkin.d07784db.glb",
+    "static/media/index.sass": "/perfobufet/static/media/logo.eae747c1.svg",
+    "static/media/Khuzin.glb": "/perfobufet/static/media/Khuzin.ccb0209a.glb",
+    "static/media/Naumov.glb": "/perfobufet/static/media/Naumov.61b55a9c.glb",
+    "static/media/Tomilov.glb": "/perfobufet/static/media/Tomilov.61895e83.glb",
+    "static/media/fence.glb": "/perfobufet/static/media/fence.ee737381.glb"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fd209be5.js",
+    "static/js/2.4d182af3.chunk.js",
+    "static/css/main.33fd3933.chunk.css",
+    "static/js/main.53d3f9bf.chunk.js"
+  ]
+}
