@@ -1,35 +1,53 @@
-<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="100 100 670 440" xml:space="preserve" sodipodi:docname="logo.svg" width="670" height="440" inkscape:version="0.92.4 (5da689c313, 2019-01-14)" class="el-image uk-text-emphasis uk-svg uk-scrollspy-inview uk-animation-stroke" uk-scrollspy-class="uk-animation-stroke" data-svg="https://scanathome.ru/wp-content/uploads/logo.svg" style="--uk-animation-stroke:992;"><metadata id="metadata871"><rdf:rdf><cc:work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type><dc:title></dc:title></cc:work></rdf:rdf></metadata><defs id="defs869"></defs><sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="3000" inkscape:window-height="1875" id="namedview867" showgrid="false" inkscape:zoom="1.7422222" inkscape:cx="450" inkscape:cy="450" inkscape:window-x="-13" inkscape:window-y="-13" inkscape:window-maximized="1" inkscape:current-layer="Слой_1"></sodipodi:namedview>
-<g id="g864" style="stroke-width:2" transform="translate(-57.397959,-151.19898)">
-	<path d="M 171.4,476.2 V 268.7 c 28.6,0 57.1,0 85.7,0 V 476.2 H 247 V 273.7 h -65.4 v 202.5 z" id="path844" inkscape:connector-curvature="0" fill="none" stroke="#000">
-		 <animate id="project_anim1" attributeName="fill" from="#fff" to="#000" begin="1s" dur="1s" fill="freeze" repeatCount="1"></animate>
-	</path>
-	<path d="m 303.6,611.2 c 1.5,1.7 2.9,3.4 4.4,5.1 H 247 V 408.8 h 61 c -1.5,1.7 -2.9,3.4 -4.4,5.1 h -46.4 v 71.6 h 40.7 c -1.2,1.7 -2.5,3.4 -3.7,5.1 h -37 v 120.7 h 46.4 z" id="path846" inkscape:connector-curvature="0" style="fill:none;stroke:#000000">
-		 <animate id="project_anim1" attributeName="fill" from="#fff" to="#000" begin="1s" dur="1s" fill="freeze" repeatCount="1"></animate>
-	</path>
-	<path d="m 313.9,410.8 c -3.5,0 -6.8,-0.3 -10.1,-0.8 v 80.5 H 293.6 V 283 c 6.4,-2.1 13.2,-3.2 20.3,-3.2 36.2,0 65.5,29.3 65.5,65.5 0.1,36.2 -29.3,65.5 -65.5,65.5 z m 0,-126 c -3.5,0 -6.9,0.3 -10.1,1 v 118.8 c 3.3,0.7 6.7,1 10.1,1 30.6,0 55.4,-27.1 55.4,-60.5 0,-33.2 -24.7,-60.3 -55.4,-60.3 z" id="path848" inkscape:connector-curvature="0" style="fill:none;stroke:#000000">
-		<animate id="project_anim1" attributeName="fill" from="#fff" to="#000" begin="1s" dur="1s" fill="freeze" repeatCount="1"></animate>
-	</path>
-	<path d="m 451.8,551.1 c 0,36.2 -29.3,65.5 -65.5,65.5 -11,0 -21.4,-2.7 -30.5,-7.5 v 75.7 h -10.1 v -75.7 c -9.1,4.8 -19.5,7.5 -30.5,7.5 -36.2,0 -65.5,-29.3 -65.5,-65.5 0,-36.2 29.3,-65.5 65.5,-65.5 11,0 21.4,2.7 30.5,7.5 v -15.8 h 10.1 v 15.8 c 9.1,-4.8 19.5,-7.5 30.5,-7.5 36.2,0 65.5,29.3 65.5,65.5 z M 345,602 c 0.2,-0.1 0.4,-0.3 0.6,-0.4 V 500.7 c -0.2,-0.1 -0.4,-0.3 -0.6,-0.4 -8.6,-6.1 -18.9,-9.6 -29.9,-9.6 -30.6,0 -55.3,27.1 -55.3,60.5 0,33.4 24.8,60.5 55.3,60.5 11.1,-0.1 21.3,-3.6 29.9,-9.7 z m 96.7,-50.9 c 0,-33.4 -24.8,-60.5 -55.4,-60.5 -11,0 -21.3,3.5 -29.9,9.6 -0.2,0.1 -0.4,0.3 -0.6,0.5 v 100.8 c 0.2,0.2 0.4,0.3 0.6,0.5 8.6,6.1 18.9,9.6 29.9,9.6 30.6,0 55.4,-27.1 55.4,-60.5 z" id="path850" inkscape:connector-curvature="0" style="fill:none;stroke:#000000">
-		<animate id="project_anim1" attributeName="fill" from="#fff" to="#000" begin="1s" dur="1s" fill="freeze" repeatCount="1"></animate>
-	</path>
-	<path d="m 612.8,484.4 c 0,59.1 -47.9,107 -107,107 -59.1,0 -107,-47.9 -107,-107 0,-59.1 47.9,-107 107,-107 59.1,0 107,47.9 107,107 z m -38.5,-68.5 c -39.8,-39.8 -102.7,-41.4 -140.5,-3.6 -37.8,37.8 -36.2,100.7 3.6,140.5 39.8,39.8 102.7,41.4 140.5,3.6 37.8,-37.8 36.2,-100.7 -3.6,-140.5 z" id="path852" inkscape:connector-curvature="0" style="fill:none;stroke:#000000">
-		<animate id="project_anim1" attributeName="fill" from="#fff" to="#000" begin="1s" dur="1s" fill="freeze" repeatCount="1"></animate>
-	</path>
-	<path d="m 639.7,414.1 c 0,36.2 -29.3,65.5 -65.5,65.5 -7.1,0 -13.9,-1.1 -20.3,-3.2 V 268.9 h 61 c -1.5,1.5 -2.9,2.9 -4.4,4.4 H 564 v 76.1 c 3.3,-0.5 6.7,-0.8 10.1,-0.8 36.2,0 65.6,29.3 65.6,65.5 z m -10.2,0 c 0,-33.4 -24.8,-60.5 -55.4,-60.5 -3.5,0 -6.9,0.3 -10.1,1 v 118.8 c 3.3,0.7 6.7,1 10.1,1 30.6,0.2 55.4,-26.9 55.4,-60.3 z" id="path854" inkscape:connector-curvature="0" style="fill:none;stroke:#000000">
-		<animate id="project_anim1" attributeName="fill" from="#fff" to="#000" begin="1s" dur="1s" fill="freeze" repeatCount="1"></animate>
-	</path>
-	<path d="m 709.5,268.9 -47.8,123 -5.3,13.5 -27.6,71.1 h -5.1 L 653.9,398.7 606.7,269 h 10.1 L 659.1,385.2 704.3,269 h 5.2 z" id="path856" inkscape:connector-curvature="0" style="fill:none;stroke:#000000">
-		<animate id="project_anim1" attributeName="fill" from="#fff" to="#000" begin="1s" dur="1s" fill="freeze" repeatCount="1"></animate>
-	</path>
-	<path d="m 771.8,549.1 c 0,36.2 -29.3,65.5 -65.5,65.5 -11,0 -21.4,-2.7 -30.5,-7.5 v 75.7 h -10.1 v -75.7 c -9.1,4.8 -19.5,7.5 -30.5,7.5 -36.2,0 -65.5,-29.3 -65.5,-65.5 0,-36.2 29.3,-65.5 65.5,-65.5 11,0 21.4,2.7 30.5,7.5 v -15.8 h 10.1 v 15.8 c 9.1,-4.8 19.5,-7.5 30.5,-7.5 36.2,0 65.5,29.3 65.5,65.5 z M 665,600 c 0.2,-0.1 0.4,-0.3 0.6,-0.4 V 498.7 c -0.2,-0.1 -0.4,-0.3 -0.6,-0.4 -8.6,-6.1 -18.9,-9.6 -29.9,-9.6 -30.6,0 -55.3,27.1 -55.3,60.5 0,33.4 24.8,60.5 55.3,60.5 11.1,-0.1 21.3,-3.6 29.9,-9.7 z m 96.7,-50.9 c 0,-33.4 -24.8,-60.5 -55.4,-60.5 -11,0 -21.3,3.5 -29.9,9.6 -0.2,0.1 -0.4,0.3 -0.6,0.5 v 100.8 c 0.2,0.2 0.4,0.3 0.6,0.5 8.6,6.1 18.9,9.6 29.9,9.6 30.6,0 55.4,-27.1 55.4,-60.5 z" id="path858" inkscape:connector-curvature="0" style="fill:none;stroke:#000000">
-		<animate id="project_anim1" attributeName="fill" from="#ffffff" to="#000" begin="1s" dur="1s" fill="freeze" repeatCount="1"></animate>
-	</path>
-	<path d="M 761.9,609.4 V 488.8 h -37 c -1.2,-1.7 -2.5,-3.4 -3.7,-5.1 h 40.7 V 412 h -46.4 c -1.5,-1.7 -2.9,-3.4 -4.4,-5.1 h 61 v 207.5 h -61 c 1.5,-1.7 2.9,-3.4 4.4,-5.1 h 46.4 z" id="path860" inkscape:connector-curvature="0" style="fill:none;stroke:#000000">
-		<animate id="project_anim1" attributeName="fill" from="#ffffff" to="#000" begin="1s" dur="1s" fill="freeze" repeatCount="1"></animate>
-	</path>
-	<path d="m 805.7,406.9 c 1.5,1.7 2.9,3.4 4.4,5.1 H 772.3 V 614.5 H 762.1 V 412 h -33.3 c -1.5,-1.7 -2.9,-3.4 -4.4,-5.1 z" id="path862" inkscape:connector-curvature="0" style="fill:none;stroke:#000000">
-		<animate id="animation1" attributeName="fill" from="#ffffff" to="#000" begin="1s" dur="1s" fill="freeze" repeatCount="1">
-		</animate>
-	</path>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<g>
+	<path d="M171.4,476.2V268.7c28.6,0,57.1,0,85.7,0v207.5H247V273.7h-65.4v202.5H171.4z"/>
+</g>
+<g>
+	<path d="M303.6,611.2c1.5,1.7,2.9,3.4,4.4,5.1h-61V408.8h61c-1.5,1.7-2.9,3.4-4.4,5.1h-46.4v71.6h40.7c-1.2,1.7-2.5,3.4-3.7,5.1
+		h-37v120.7H303.6z"/>
+</g>
+<g>
+	<path d="M313.9,410.8c-3.5,0-6.8-0.3-10.1-0.8v80.5h-10.2V283c6.4-2.1,13.2-3.2,20.3-3.2c36.2,0,65.5,29.3,65.5,65.5
+		C379.5,381.5,350.1,410.8,313.9,410.8z M313.9,284.8c-3.5,0-6.9,0.3-10.1,1v118.8c3.3,0.7,6.7,1,10.1,1c30.6,0,55.4-27.1,55.4-60.5
+		C369.3,311.9,344.6,284.8,313.9,284.8z"/>
+</g>
+<g>
+	<path d="M451.8,551.1c0,36.2-29.3,65.5-65.5,65.5c-11,0-21.4-2.7-30.5-7.5v75.7h-10.1v-75.7c-9.1,4.8-19.5,7.5-30.5,7.5
+		c-36.2,0-65.5-29.3-65.5-65.5c0-36.2,29.3-65.5,65.5-65.5c11,0,21.4,2.7,30.5,7.5v-15.8h10.1v15.8c9.1-4.8,19.5-7.5,30.5-7.5
+		C422.5,485.6,451.8,514.9,451.8,551.1z M345,602c0.2-0.1,0.4-0.3,0.6-0.4V500.7c-0.2-0.1-0.4-0.3-0.6-0.4
+		c-8.6-6.1-18.9-9.6-29.9-9.6c-30.6,0-55.3,27.1-55.3,60.5c0,33.4,24.8,60.5,55.3,60.5C326.2,611.6,336.4,608.1,345,602z
+		 M441.7,551.1c0-33.4-24.8-60.5-55.4-60.5c-11,0-21.3,3.5-29.9,9.6c-0.2,0.1-0.4,0.3-0.6,0.5v100.8c0.2,0.2,0.4,0.3,0.6,0.5
+		c8.6,6.1,18.9,9.6,29.9,9.6C416.9,611.6,441.7,584.5,441.7,551.1z"/>
+</g>
+<g>
+	<path d="M612.8,484.4c0,59.1-47.9,107-107,107c-59.1,0-107-47.9-107-107c0-59.1,47.9-107,107-107
+		C564.9,377.4,612.8,425.3,612.8,484.4z M574.3,415.9c-39.8-39.8-102.7-41.4-140.5-3.6c-37.8,37.8-36.2,100.7,3.6,140.5
+		c39.8,39.8,102.7,41.4,140.5,3.6C615.7,518.6,614.1,455.7,574.3,415.9z"/>
+</g>
+<g>
+	<path d="M639.7,414.1c0,36.2-29.3,65.5-65.5,65.5c-7.1,0-13.9-1.1-20.3-3.2V268.9h61c-1.5,1.5-2.9,2.9-4.4,4.4H564v76.1
+		c3.3-0.5,6.7-0.8,10.1-0.8C610.3,348.6,639.7,377.9,639.7,414.1z M629.5,414.1c0-33.4-24.8-60.5-55.4-60.5c-3.5,0-6.9,0.3-10.1,1
+		v118.8c3.3,0.7,6.7,1,10.1,1C604.7,474.6,629.5,447.5,629.5,414.1z"/>
+</g>
+<g>
+	<path d="M709.5,268.9l-47.8,123l-5.3,13.5l-27.6,71.1h-5.1l30.2-77.8l-47.2-129.7h10.1l42.3,116.2l45.2-116.2H709.5z"/>
+</g>
+<g>
+	<path d="M771.8,549.1c0,36.2-29.3,65.5-65.5,65.5c-11,0-21.4-2.7-30.5-7.5v75.7h-10.1v-75.7c-9.1,4.8-19.5,7.5-30.5,7.5
+		c-36.2,0-65.5-29.3-65.5-65.5c0-36.2,29.3-65.5,65.5-65.5c11,0,21.4,2.7,30.5,7.5v-15.8h10.1v15.8c9.1-4.8,19.5-7.5,30.5-7.5
+		C742.5,483.6,771.8,512.9,771.8,549.1z M665,600c0.2-0.1,0.4-0.3,0.6-0.4V498.7c-0.2-0.1-0.4-0.3-0.6-0.4
+		c-8.6-6.1-18.9-9.6-29.9-9.6c-30.6,0-55.3,27.1-55.3,60.5c0,33.4,24.8,60.5,55.3,60.5C646.2,609.6,656.4,606.1,665,600z
+		 M761.7,549.1c0-33.4-24.8-60.5-55.4-60.5c-11,0-21.3,3.5-29.9,9.6c-0.2,0.1-0.4,0.3-0.6,0.5v100.8c0.2,0.2,0.4,0.3,0.6,0.5
+		c8.6,6.1,18.9,9.6,29.9,9.6C736.9,609.6,761.7,582.5,761.7,549.1z"/>
+</g>
+<g>
+	<path d="M761.9,609.4V488.8h-37c-1.2-1.7-2.5-3.4-3.7-5.1h40.7V412h-46.4c-1.5-1.7-2.9-3.4-4.4-5.1h61v207.5h-61
+		c1.5-1.7,2.9-3.4,4.4-5.1H761.9z"/>
+</g>
+<g>
+	<path d="M805.7,406.9c1.5,1.7,2.9,3.4,4.4,5.1h-37.8v202.5h-10.2V412h-33.3c-1.5-1.7-2.9-3.4-4.4-5.1H805.7z"/>
 </g>
 </svg>
