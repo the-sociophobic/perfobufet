@@ -7,8 +7,16 @@ class Frame extends React.Component {
   render = () =>
     <div className={"frame " + this.props.className}>
       <div className="frame__logo" />
-      {this.props.children}
-      <div className="frame__lower-line" />
+      <div className="frame__container">
+        {this.props.children}
+      </div>
+      {this.props.bottom ?
+        <div className="frame__bottom-content">
+          {this.props.bottom}
+        </div>
+        :
+        <div className="frame__bottom-line" />
+      }
     </div>
 }
 

@@ -1,7 +1,7 @@
-import THREE from 'three'
+import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-// import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
-// import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
 // import { EffectComposer, RenderPass } from 'postprocessing'
 
 import transitionHandler from './handlers/transitionHandler'
@@ -10,26 +10,24 @@ import transitionHandler from './handlers/transitionHandler'
 const targetToCamera = -15
 const maxFrameNumber = 5000
 
-var sceneVariables = {
-  renderer: undefined,
-  camera: undefined,
-  scene: new THREE.Scene(),
-  composer: undefined,
-  controls: undefined,
-
-  clock: new THREE.Clock(),
-  frameNumber: 0,
-
-  units: {},
-  unitsToggled: false,
-}
-
 
 export default class Scene extends transitionHandler {
 
   constructor(props) {
     super(props)
-    this.scene = sceneVariables
+    this.scene = {
+      renderer: undefined,
+      camera: undefined,
+      scene: new THREE.Scene(),
+      composer: undefined,
+      controls: undefined,
+    
+      clock: new THREE.Clock(),
+      frameNumber: 0,
+    
+      units: {},
+      unitsToggled: false,
+    }
   }
 
   init = ViewerDiv => {
@@ -90,26 +88,38 @@ export default class Scene extends transitionHandler {
   animate = () => {
     this.scene.frameNumber = (this.scene.frameNumber + 1) % maxFrameNumber
 
-    const {
-      composer,
-      controls,
-      units,
-      clock,
-    } = this.scene
-
-    Object.keys(units)
-      .forEach(unitName =>
-        units[unitName].animate({
-          THREE: THREE,
-          ...this.scene,
-          input: this.scene.units.Controls,
-          maxFrameNumber: maxFrameNumber,
-          react: this.props.react,
-        }))
-
-    controls.update()
-    // composer.render()
-    composer.render(clock.getDelta())
+    const { left, right, top, bottom } = this.scene.renderer.domElement.getBoundingClientRect()
+ 
+    const isOffscreen =
+        bottom < 0 ||
+        top > this.scene.renderer.domElement.clientHeight ||
+        right < 0 ||
+        left > this.scene.renderer.domElement.clientWidth;
+  
+    if (!isOffscreen) {
+      const {
+        composer,
+        controls,
+        units,
+        clock,
+        renderer
+      } = this.scene
+  
+      Object.keys(units)
+        .forEach(unitName =>
+          units[unitName].animate({
+            THREE: THREE,
+            ...this.scene,
+            input: this.scene.units.Controls,
+            maxFrameNumber: maxFrameNumber,
+            react: this.props.react,
+          }))
+  
+      controls.update()
+      // composer.render()
+      // composer.render(clock.getDelta())
+      renderer.render(this.scene.scene, this.scene.camera)
+    }
 
     this.frameId = window.requestAnimationFrame(this.animate)
   }
@@ -129,7 +139,7 @@ export default class Scene extends transitionHandler {
         const unit = this.props.units[unitName]
 
         if (!unit.disabled ^ this.scene.unitsToggled) {
-          this.scene.units[unitName] = new unit.unit(props)
+          this.scene.units[unitName] = new unit.unit({...props, ...unit.args})
           this.scene.units[unitName].init &&
             this.scene.units[unitName].init()
         }

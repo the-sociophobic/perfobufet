@@ -1,4 +1,4 @@
-import Unit from 'libs/engines/3d/Unit'
+import Unit from 'libs/three/Unit'
 
 import timingFuntions from './timingFunctions'
 
