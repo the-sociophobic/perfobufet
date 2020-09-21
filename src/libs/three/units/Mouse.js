@@ -38,9 +38,14 @@ export default class Controls extends Unit {
       console.log("no mouse found")
       return
     }
-  
-    this.mouse.alphaX = -clamp(e.pageX / window.innerWidth - .5, -.5, .5)
-    this.mouse.alphaY = clamp(e.pageY / window.innerHeight - .5, -.5, .5)
+
+    const { left, right, top, bottom } = this.props.renderer.domElement.getBoundingClientRect()
+    const domElementCenterX = (right - left) / 2
+    // const domElementCenterY = bottom + (top - bottom) / 2 - window.scrollY
+    const domElementCenterY = (bottom - top) / 2
+
+    this.mouse.alphaX = -clamp((e.pageX - domElementCenterX) / window.innerWidth, -1, 1)
+    this.mouse.alphaY = clamp((e.pageY - domElementCenterY) / window.innerHeight, -1, 1)
   }
 
 

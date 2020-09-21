@@ -3,7 +3,11 @@
   
 @font-face
   font-family: 'Gotham'
-  src: url('./fonts/Gotham/GothaProMed.otf') format('opentype')
+  src: url('./fonts/Gotham/GothaProReg.otf') format('opentype')
+
+@font-face
+  font-family: 'Gotham-Bold'
+  src: url('./fonts/Gotham/GothaProBol.otf') format('opentype')
 
 
 $font-color: black
@@ -39,6 +43,8 @@ $breakpoint-1024: 1024px
   border: none
   background-color: rgba(0, 0, 0, 0)
 
+h1, h2, h3, h4, h5, h6
+  font-family: 'Gotham-Bold'
 
 *
   font-family: 'Gotham', sans-serif
@@ -127,18 +133,29 @@ $header-width: 80px
     transform-origin: bottom right
 
 
-.Viewer
-  width: 100%
-  height: 100%
-  
 
-$frame-border: 125px
+$frame-border: 100px
 $frame-width: 2px
 $frame-radius: $frame-border / 2
+
+
+
+.Viewer
+  width: 100%
+  height: 66vh
+  @extend .noselect
+  outline: none
+  *
+    @extend .noselect
+    outline: none
+
+  
+
 .frame
   width: 100%
-  height: 100vh
   position: relative
+  @extend .d-flex
+  margin-bottom: 100px
   &__logo
     position: absolute
     top: $frame-border * -.125
@@ -163,6 +180,7 @@ $frame-radius: $frame-border / 2
     text-align: center
     width: $frame-border * 2
     font-size: 2.5vw
+    font-family: 'Gotham-Bold', sans-serif
   &::before, &::after
     content: ''
     position: absolute
@@ -181,12 +199,34 @@ $frame-radius: $frame-border / 2
     border-top-right-radius: $frame-radius
     border-bottom-right-radius: $frame-radius
   &__container
-    position: absolute
+    position: relative
+    z-index: 100
     width: calc(100% - #{$frame-border} * 2)
-    height: calc(100% - #{$frame-border} * 2)
-    top: $frame-border
-    left: $frame-border
+    // height: calc(100% - #{$frame-border} * 2)
+    margin: $frame-border * 1.5 $frame-border
 
 .closed
   width: 100%
   height: 100%
+
+
+.head
+  @extend .d-flex
+  @extend .justify-content-between
+  flex-direction: row
+  @media (max-width: $breakpoint-1024)
+    flex-direction: column
+  &__text
+    @extend .order-2
+    height: 100%
+    width: 55%
+    @media (max-width: $breakpoint-1024)
+      width: 100%
+    font-size: 16px
+    // text-align: justify
+  .Viewer
+    width: 40%
+    @extend .order-1
+    @extend .order-md-2
+    @media (max-width: $breakpoint-1024)
+      width: 100%

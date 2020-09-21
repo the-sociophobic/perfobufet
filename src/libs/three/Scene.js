@@ -7,7 +7,7 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
 import transitionHandler from './handlers/transitionHandler'
 
 
-const targetToCamera = -15
+const targetToCamera = -25
 const maxFrameNumber = 5000
 
 
@@ -91,12 +91,12 @@ export default class Scene extends transitionHandler {
     const { left, right, top, bottom } = this.scene.renderer.domElement.getBoundingClientRect()
  
     const isOffscreen =
-        bottom < 0 ||
-        top > this.scene.renderer.domElement.clientHeight ||
-        right < 0 ||
-        left > this.scene.renderer.domElement.clientWidth;
+      bottom < 0 ||
+      top > this.scene.renderer.domElement.clientHeight ||
+      right < 0 ||
+      left > this.scene.renderer.domElement.clientWidth;
   
-    if (!isOffscreen) {
+    if (!isOffscreen || true) {
       const {
         composer,
         controls,

@@ -11,7 +11,7 @@ export default class Head extends Model {
     if (this.model) {
       if (!this.loaded) {
         this.loaded = true
-        this.model.scale.set(5, 5, 5)
+        this.model.scale.set(12, 10, 12)
       }
 
       this.model.rotation.y = Math.PI / 2 - props.input.mouse.alphaX
