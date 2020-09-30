@@ -2,6 +2,7 @@ import React from 'react'
 
 import Frame from 'components/Frame'
 import ThreeScene from 'components/ThreeScene'
+import Social from 'components/Social'
 
 import Fence from 'libs/three/units/Fence'
 import Lights from 'libs/three/units/Lights'
@@ -18,7 +19,8 @@ class Heads extends React.Component {
       className="closed"
     >
       <Frame
-        bottom={"АРХИВ"}
+        // bottom={"АРХИВ"}
+        bottom={<Social />}
       >
         <ThreeScene
           id="sceneClosed"

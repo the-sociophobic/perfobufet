@@ -1,5 +1,5 @@
 @import '~bootstrap/scss/bootstrap.scss'
-
+@import './variables.css'
   
 @font-face
   font-family: 'Gotham'
@@ -60,6 +60,9 @@ h1, h2, h3, h4, h5, h6
   height: 100%
   overflow-y: scroll
   background: $background-gradient
+  @extend .d-flex
+  @extend .flex-column
+  @extend .justify-content-around
 
 
 $header-width: 80px
@@ -134,15 +137,15 @@ $header-width: 80px
 
 
 
-$frame-border: 100px
-$frame-width: 2px
-$frame-radius: $frame-border / 2
+$frame-border: var(--frame-border)
+$frame-width: var(--frame-width)
+$frame-radius: calc(#{$frame-border} / 2)
 
 
 
 .Viewer
   width: 100%
-  height: 66vh
+  height: 55vh
   @extend .noselect
   outline: none
   *
@@ -155,30 +158,40 @@ $frame-radius: $frame-border / 2
   width: 100%
   position: relative
   @extend .d-flex
-  margin-bottom: 100px
+  margin-top: calc(#{$frame-border} / 3)
+  margin-bottom: calc(#{$frame-border} / 3)
   &__logo
     position: absolute
-    top: $frame-border * -.125
-    left: calc(50% - #{$frame-border})
-    width: $frame-border * 2
-    height: $frame-border * 1.5
     background-image: url(./img/logo.svg)
     background-repeat: no-repeat
     background-position: center
     background-size: 100%
+    transform: translateX(2%)
+    top: calc(#{$frame-border} * -.125)
+    left: calc(50% - #{$frame-border})
+    width: calc(#{$frame-border} * 2)
+    height: calc(#{$frame-border} * 1.5)
+    @media screen and ( max-width: 1024px )
+      top: calc(#{$frame-border} * -.625)
+      left: calc(50% - #{$frame-border} * 2)
+      width: calc(#{$frame-border} * 4)
+      height: calc(#{$frame-border} * 3)      
   &__bottom-line
     position: absolute
-    bottom: $frame-border / 2
+    bottom: calc(#{$frame-border} / 2)
     border-bottom: $frame-width solid black
-    width: $frame-border * 3
+    width: calc(#{$frame-border} * 3)
     left: calc(50% - #{$frame-border} * 1.5)
   &__bottom-content
     position: absolute
     left: calc(50% - #{$frame-border})
-    bottom: $frame-border / 2
+    bottom: calc(#{$frame-border} / 2)
     transform: translateY(50%)
     text-align: center
-    width: $frame-border * 2
+    width: calc(#{$frame-border} * 2)
+    @media screen and ( max-width: 1024px )
+      left: calc(50% - #{$frame-border} * 2)
+      width: calc(#{$frame-border} * 4)
     font-size: 2.5vw
     font-family: 'Gotham-Bold', sans-serif
   &::before, &::after
@@ -186,6 +199,8 @@ $frame-radius: $frame-border / 2
     position: absolute
     top: calc(#{$frame-border} / 2)
     width: calc(50% - #{$frame-border} * 1.5)
+    @media screen and ( max-width: 1024px )
+      width: calc(50% - #{$frame-border} * 3)
     height: calc(100% - #{$frame-border})
     border: $frame-width solid black
   &::before
@@ -203,11 +218,14 @@ $frame-radius: $frame-border / 2
     z-index: 100
     width: calc(100% - #{$frame-border} * 2)
     // height: calc(100% - #{$frame-border} * 2)
-    margin: $frame-border * 1.5 $frame-border
+    margin-top: calc(#{$frame-border} * 1.5)
+    margin-bottom: calc(#{$frame-border} * 1.5)
+    margin-left: $frame-border
+    margin-right: $frame-border
 
 .closed
   width: 100%
-  height: 100%
+  // height: 100%
 
 
 .head
@@ -230,3 +248,23 @@ $frame-radius: $frame-border / 2
     @extend .order-md-2
     @media (max-width: $breakpoint-1024)
       width: 100%
+
+$social-size: var(--social-size)
+.social
+  @extend .d-flex
+  @extend .justify-content-around
+  flex-direction: row
+  // margin-right: calc(-#{$social-size} / 2)
+  &__link
+    width: $social-size
+    height: $social-size
+    border-radius: calc(#{$social-size} / 10)
+    // margin-right: calc(#{$social-size} / 2)
+    cursor: pointer
+    background-size: 100%
+    background-position: center
+    background-repeat: no-repeat
+    &--inst
+      background-image: url('./img/instagram_logo.svg')
+    &--vk
+      background-image: url('./img/vk_logo.svg')

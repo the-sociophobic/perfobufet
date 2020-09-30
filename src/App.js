@@ -18,8 +18,8 @@ class App extends React.Component {
       <div className="App">
         {/* <div className="container"> */}
           {/* <Header /> */}
-          <Heads />
-          <About />
+          {/* <Heads />
+          <About /> */}
           <Closed />
         {/* </div> */}
       </div>
