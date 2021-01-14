@@ -1,6 +1,9 @@
 import React from 'react'
 import Div100vh from 'react-div-100vh'
 
+import Helmet from 'components/Helmet'
+import Frame from 'components/Frame'
+
 import Header from 'components/Header'
 
 import Heads from 'sections/Heads'
@@ -15,13 +18,14 @@ class App extends React.Component {
 
   render = () =>
     <Div100vh>
+      <Helmet />
       <div className="App">
-        {/* <div className="container"> */}
-          {/* <Header /> */}
-          {/* <Heads />
-          <About /> */}
-          <Closed />
-        {/* </div> */}
+        <Closed />
+        {/* <MainScene />
+        <div className="App__content">
+          <Frame>
+          </Frame>
+        </div> */}
       </div>
     </Div100vh>
 }
