@@ -11,6 +11,7 @@ import About from 'sections/About'
 import Closed from 'sections/Closed'
 
 import 'styles/index.sass'
+import MainScene from 'sections/MainScene'
 
 
 class App extends React.Component {
@@ -19,6 +20,9 @@ class App extends React.Component {
   render = () =>
     <Div100vh>
       <Helmet />
+      <div className="a">
+        <MainScene />
+      </div>
       <div className="App">
         <Closed />
         {/* <MainScene />

@@ -14,7 +14,7 @@
 @media screen and ( max-width: 768px ) {
   :root {
     --frame-border: 50px;
-    --frame-width: 1px;
+    --frame-width: 2px;
     --social-size: 35px;
   }
 }

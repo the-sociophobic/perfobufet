@@ -11,7 +11,8 @@
 
 
 $font-color: black
-$background-gradient: linear-gradient(0deg, rgba(229,245,255,1) 0%, rgba(132,163,181,1) 100%)
+// $background-gradient: linear-gradient(0deg, rgba(229,245,255,1) 0%, rgba(132,163,181,1) 100%)
+$background-gradient: radial-gradient(circle, #b1cae2 0%, white 100%)
   
 $breakpoint-1024: 1024px
   
@@ -81,11 +82,11 @@ $header-width: 80px
     background-repeat: no-repeat
     cursor: pointer
   &__perfobufet-logo
-    background-image: url(./img/logo.svg)
+    background-image: url(./img/logos/03.svg)
     top: $header-width / 4
     left: $header-width / 4
   &__lev-logo
-    background-image: url(./img/logo.svg)
+    background-image: url(./img/logos/03.svg)
     bottom: $header-width / 4
     right: $header-width / 4
   &__top, &__bottom, &__left, &__right
@@ -143,26 +144,61 @@ $frame-radius: calc(#{$frame-border} / 2)
 
 
 
-.Viewer
+.closed .Viewer
   width: 100%
-  height: 55vh
+  height: 57vh
   @extend .noselect
   outline: none
   *
     @extend .noselect
     outline: none
 
-  
+.a 
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  overflow: hidden
+  &::after
+    content: ''
+    position: absolute
+    width: 100%
+    padding-top: 44.38%
+    top: 50%
+    @media screen and ( max-width: 1024px  )
+      width: 200%
+      padding-top: 88.76%
+      top: 50%
+    @media screen and ( max-width: 768px  )
+      width: 200%
+      padding-top: 88.76%
+      top: 70%
+    left: 50%
+    transform: translateX(-50%)
+    background-image: url(./img/cloud.png)
+    background-position: center
+    background-size: 100%
+    background-repeat: no-repeat
+    z-index: 1
+  .Viewer
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 10
 
 .frame
   width: 100%
   position: relative
+  z-index: 10
   @extend .d-flex
   margin-top: calc(#{$frame-border} / 3)
   margin-bottom: calc(#{$frame-border} / 3)
   &__logo
     position: absolute
-    background-image: url(./img/logo.svg)
+    background-image: url(./img/logos/03.svg)
     background-repeat: no-repeat
     background-position: center
     background-size: 100%
@@ -173,15 +209,15 @@ $frame-radius: calc(#{$frame-border} / 2)
     height: calc(#{$frame-border} * 1.5)
     @media screen and ( max-width: 1024px )
       top: calc(#{$frame-border} * -.625)
-      left: calc(50% - #{$frame-border} * 2)
-      width: calc(#{$frame-border} * 4)
+      left: calc(50% - #{$frame-border} * 1.5)
+      width: calc(#{$frame-border} * 3)
       height: calc(#{$frame-border} * 3)      
   &__bottom-line
     position: absolute
     bottom: calc(#{$frame-border} / 2)
     border-bottom: $frame-width solid black
-    width: calc(#{$frame-border} * 3)
-    left: calc(50% - #{$frame-border} * 1.5)
+    width: calc(#{$frame-border} * 5)
+    left: calc(50% - #{$frame-border} * 2.5)
   &__bottom-content
     position: absolute
     left: calc(50% - #{$frame-border})
@@ -200,7 +236,7 @@ $frame-radius: calc(#{$frame-border} / 2)
     top: calc(#{$frame-border} / 2)
     width: calc(50% - #{$frame-border} * 1.5)
     @media screen and ( max-width: 1024px )
-      width: calc(50% - #{$frame-border} * 3)
+      width: calc(50% - #{$frame-border} * 2.5)
     height: calc(100% - #{$frame-border})
     border: $frame-width solid black
   &::before
@@ -265,6 +301,6 @@ $social-size: var(--social-size)
     background-position: center
     background-repeat: no-repeat
     &--inst
-      background-image: url('./img/instagram_logo.svg')
+      // background-image: url('./img/instagram_logo.svg')
     &--vk
-      background-image: url('./img/vk_logo.svg')
+      // background-image: url('./img/vk_logo.svg')

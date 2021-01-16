@@ -7,8 +7,8 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
 import transitionHandler from './handlers/transitionHandler'
 
 
-const targetToCamera = -25
-const maxFrameNumber = 5000
+const targetToCamera = -35
+const maxFrameNumber = 25000
 
 
 export default class Scene extends transitionHandler {
