@@ -2,12 +2,12 @@
 @import './variables.css'
   
 @font-face
-  font-family: 'Gotham'
-  src: url('./fonts/Gotham/GothaProReg.otf') format('opentype')
+  font-family: 'Cormorant'
+  src: url('./fonts/Cormorant/Cormorant-Regular.ttf') format('truetype')
 
 @font-face
-  font-family: 'Gotham-Bold'
-  src: url('./fonts/Gotham/GothaProBol.otf') format('opentype')
+  font-family: 'Cormorant-Bold'
+  src: url('./fonts/Cormorant/Cormorant-Bold.ttf') format('truetype')
 
 
 $font-color: black
@@ -45,25 +45,35 @@ $breakpoint-1024: 1024px
   background-color: rgba(0, 0, 0, 0)
 
 h1, h2, h3, h4, h5, h6
-  font-family: 'Gotham-Bold'
+  font-family: 'Cormorant-Bold'
 
 *
-  font-family: 'Gotham', sans-serif
+  font-family: 'Cormorant', sans-serif
   color: $font-color
   margin: 0
   box-sizing: border-box
   @extend .noselect
+  font-size: 19px
   // overflow: hidden
 
 
 .App
-  width: 100%
-  height: 100%
-  overflow-y: scroll
-  background: $background-gradient
+  // width: 100%
+  // height: 100%
+  overflow-x: hidden
   @extend .d-flex
   @extend .flex-column
   @extend .justify-content-around
+  position: relative
+  &::before
+    content: ''
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background: $background-gradient
+
 
 
 $header-width: 80px
@@ -143,24 +153,9 @@ $frame-width: var(--frame-width)
 $frame-radius: calc(#{$frame-border} / 2)
 
 
-
-.closed .Viewer
-  width: 100%
-  height: 57vh
-  @extend .noselect
-  outline: none
-  *
-    @extend .noselect
-    outline: none
-
-.a 
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  overflow: hidden
-  &::after
+.clouds
+  position: relative
+  &::before
     content: ''
     position: absolute
     width: 100%
@@ -181,19 +176,27 @@ $frame-radius: calc(#{$frame-border} / 2)
     background-size: 100%
     background-repeat: no-repeat
     z-index: 1
-  .Viewer
-    width: 100%
-    height: 100%
-    position: absolute
-    top: 0
-    left: 0
-    z-index: 10
+
+.frame .Viewer
+  z-index: 10
+  width: 100%
+  height: 95vh
+  @media screen and ( max-width: 768px  )
+    height: 65vh
+  @extend .noselect
+  outline: none
+  @extend .clouds
+  *
+    @extend .noselect
+    outline: none
+
 
 .frame
   width: 100%
   position: relative
-  z-index: 10
+  z-index: 100
   @extend .d-flex
+  @extend .my-5
   margin-top: calc(#{$frame-border} / 3)
   margin-bottom: calc(#{$frame-border} / 3)
   &__logo
@@ -204,8 +207,8 @@ $frame-radius: calc(#{$frame-border} / 2)
     background-size: 100%
     transform: translateX(2%)
     top: calc(#{$frame-border} * -.125)
-    left: calc(50% - #{$frame-border})
-    width: calc(#{$frame-border} * 2)
+    left: calc(50% - #{$frame-border} * .75)
+    width: calc(#{$frame-border} * 1.5)
     height: calc(#{$frame-border} * 1.5)
     @media screen and ( max-width: 1024px )
       top: calc(#{$frame-border} * -.625)
@@ -229,7 +232,7 @@ $frame-radius: calc(#{$frame-border} / 2)
       left: calc(50% - #{$frame-border} * 2)
       width: calc(#{$frame-border} * 4)
     font-size: 2.5vw
-    font-family: 'Gotham-Bold', sans-serif
+    font-family: 'Cormorant-Bold', sans-serif
   &::before, &::after
     content: ''
     position: absolute
@@ -253,11 +256,15 @@ $frame-radius: calc(#{$frame-border} / 2)
     position: relative
     z-index: 100
     width: calc(100% - #{$frame-border} * 2)
-    // height: calc(100% - #{$frame-border} * 2)
+    height: calc(100% - #{$frame-border} * 2)
     margin-top: calc(#{$frame-border} * 1.5)
     margin-bottom: calc(#{$frame-border} * 1.5)
     margin-left: $frame-border
     margin-right: $frame-border
+    &--no-padding
+      width: 100%
+      height: 100%
+      margin: 0 !important
 
 .closed
   width: 100%

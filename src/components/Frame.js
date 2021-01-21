@@ -7,7 +7,7 @@ class Frame extends React.Component {
   render = () =>
     <div className={"frame " + this.props.className}>
       <div className="frame__logo" />
-      <div className="frame__container">
+      <div className={`frame__container ${this.props.noPadding && "frame__container--no-padding"}`}>
         {this.props.children}
       </div>
       {this.props.bottom ?
