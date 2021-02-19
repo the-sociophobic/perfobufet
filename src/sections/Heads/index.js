@@ -6,13 +6,13 @@ import ExternalLink from 'components/ExternalLink'
 
 import Head from 'libs/three/units/Head'
 import Lights from 'libs/three/units/Lights'
-import Mouse from 'libs/three/units/Mouse'
+import Controls from 'libs/three/units/Controls'
 
-import Tomilov from './Tomilov.glb'
-import Naumov from './Naumov.glb'
-import Belysh from './Belysh.glb'
-import Khuzin from './Khuzin.glb'
-import Demidkin from './Demidkin.glb'
+import Tomilov from 'models/round\ heads/Tomilov.glb'
+import Naumov from 'models/round\ heads/Naumov.glb'
+import Belysh from 'models/round\ heads/Belysh.glb'
+import Khuzin from 'models/round\ heads/Khuzin.glb'
+import Demidkin from 'models/round\ heads/Demidkin.glb'
 
 
 class Heads extends React.Component {
@@ -123,7 +123,7 @@ class Heads extends React.Component {
                   disabled: false,
                 },
                 Controls: {
-                  unit: Mouse,
+                  unit: Controls,
                   disabled: false,
                 },
               }}

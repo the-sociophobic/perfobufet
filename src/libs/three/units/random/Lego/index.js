@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import Model from 'libs/three/units/Model'
 
 
-export default class Fence extends Model {
+export default class Lego extends Model {
   constructor(props) {
     super(props)
   }
@@ -13,6 +13,7 @@ export default class Fence extends Model {
         this.loaded = true
         this.model.scale.set(.5, .5, .5)
         this.model.rotation.y = Math.PI
+        this.model.position.set(0, 0, 0)
       }
 
       let alpha = props.frameNumber / props.maxFrameNumber

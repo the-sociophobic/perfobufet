@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
+import { Interaction } from 'three.interaction'
 // import { EffectComposer, RenderPass } from 'postprocessing'
 
 import transitionHandler from './handlers/transitionHandler'
@@ -9,6 +10,7 @@ import transitionHandler from './handlers/transitionHandler'
 
 const targetToCamera = -35
 const maxFrameNumber = 25000
+const scaleFactor = 150
 
 
 export default class Scene extends transitionHandler {
@@ -60,6 +62,8 @@ export default class Scene extends transitionHandler {
     // this.scene.composer = new EffectComposer(this.scene.renderer)
     // this.scene.composer.addPass(new RenderPass(this.scene.scene, this.scene.camera))
 
+    // this.interaction = new Interaction(this.scene.renderer, this.scene.scene, this.scene.camera)
+
     this.initUnits()
 
     if (!this.frameId)
@@ -102,9 +106,13 @@ export default class Scene extends transitionHandler {
         controls,
         units,
         clock,
-        renderer
+        renderer,
+        camera,
       } = this.scene
   
+      camera.position.y = -scaleFactor * units.controls.scroll.alphaY
+      controls.target.y = -scaleFactor * units.controls.scroll.alphaY
+
       Object.keys(units)
         .forEach(unitName =>
           units[unitName].animate({

@@ -16,16 +16,11 @@ import Scene from '../libs/three/Scene'
 export default class ThreeScene extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      coinsCollected: 0,
-    }
+    this.state = {}
 
     this.viewerRef = new React.createRef()
 
-    this.scene = new Scene({
-      react: {},
-      units: props.units,
-    })
+    this.scene = new Scene(props)
   }
 
   componentDidMount() {
