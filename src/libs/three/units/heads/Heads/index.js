@@ -19,7 +19,7 @@ const array = [
   Khuzin,
 ]
 const R = isMobile() ? 37 : 55
-
+const headsLength = 5
 
 
 
@@ -36,19 +36,19 @@ export default class Heads extends Unit {
     this.index = _index
 
   loadModel = async () => {
-    this.heads = []
-    this.heads.push(await pcdLoader(Demidkin))
-    this.heads.push(await pcdLoader(Naumov))
-    this.heads.push(await pcdLoader(Tomilov))
-    this.heads.push(await pcdLoader(Belysh))
-    this.heads.push(await pcdLoader(Khuzin))
+    this.heads = [headsLength]
+    this.heads[0] = await pcdLoader(Demidkin)
+    this.heads[1] = await pcdLoader(Naumov)
+    this.heads[2] = await pcdLoader(Tomilov)
+    this.heads[3] = await pcdLoader(Belysh)
+    this.heads[4] = await pcdLoader(Khuzin)
 
     this.heads.forEach((head, index) => {
       this.props.scene.add(head)
 
       head.scale.multiplyScalar(R)
       head.rotation.x -= Math.PI / 2
-      const alpha = (index + this.index) / 5 * Math.PI * 2
+      const alpha = ((headsLength + index - this.index) % headsLength) / headsLength * Math.PI * 2
       head.position.set(
         Math.sin(alpha) * R * 1.5 + (isMobile() ? 0 : R / 3),
         -R,
@@ -73,7 +73,7 @@ export default class Heads extends Unit {
         head.rotation.x = -Math.PI / 2 - props.units.controls.mouse.alphaY
         head.rotation.z = (.5 - props.units.controls.mouse.alphaX / 5) * 2 * Math.PI
     
-        const alpha = (index + this.index) / 5 * Math.PI * 2
+        const alpha = (headsLength + index - this.index) / headsLength * Math.PI * 2
         head.position.set(
           Math.sin(alpha) * R * 1.5 + (isMobile() ? 0 : R / 3),
           -R,

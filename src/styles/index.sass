@@ -44,6 +44,18 @@ $breakpoint-1024: 1024px
   border: none
   background-color: rgba(0, 0, 0, 0)
 
+.abs-cover
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+
+.def-img
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+
 h1, h2, h3, h4, h5, h6
   font-family: 'Cormorant-Bold'
 
@@ -344,7 +356,7 @@ $social-size: var(--social-size)
   top: 0
   left: 0
   &__card
-    padding: .5rem
+    padding: 1.5rem
     position: absolute
     bottom: 0
     background-color: white
@@ -358,12 +370,39 @@ $social-size: var(--social-size)
       transform: translate(50%, 0)
       bottom: -60%
       height: 85%
-      h1
-        font-size: 2rem
+    &__title
+      @extend .d-flex
+      @extend .flex-row
+      &__h1
+        @extend .h1
+        @extend .font-italic
+        @extend .flex-grow-1
+        @media (max-width: $breakpoint-1024)
+          font-size: 2rem
+      &__links
+        @extend .d-flex
+        @extend .flex-row
+        &__item
+          width: 1.5rem
+          height: 1.5rem
+          margin-left: .5rem
+          border-radius: 100%
+          background-color: #CEDEF5
+          @extend .def-img
+          transition: transform .1s
+          &:hover
+            transform: scale(1.35)
+          &--inst
+            background-image: url(./img/social/inst.svg)
+          &--vk
+            background-image: url(https://vk.com/images/svg_icons/ic_head_logo.svg)
+            background-size: 60%
+          &--fb
+            background-image: url(./img/social/fb.svg)
   &__arrow
     position: absolute
     top: 50%
-    transform: translateY(-50%)
+    transform: translate(0, -50%)
     width: 4%
     padding-top: 4%
     @media (max-width: $breakpoint-1024)
@@ -376,8 +415,13 @@ $social-size: var(--social-size)
     background-size: contain
     &--left
       left: 0
-      transform: translateY(-50%) rotate(180deg)
+      transform: translate(0, -50%) rotate(180deg)
+      &:hover
+        transform: translate(-30%, -50%) rotate(180deg) scale(1.55)
     &--right
       right: 0
+      &:hover
+        transform: translate(30%, -50%) scale(1.55)
+    transition: transform .15s
 
     

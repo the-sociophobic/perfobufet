@@ -67,7 +67,7 @@ const data = [
       Кмк, в Перфобуфете я отвечаю за самые масштабные проекты. Например, мы с Ромой Хузиным были концептмейкерами первого ивента новой ветки событий «Opening» - Лахта-центр, которое не состоялось из-за пандемии. <br />
     </span>,
     social: {
-      inst: "dr_belysh",
+      inst: "belysh2022",
       vk: "dmitry_belysh",
       fb: "dmitry.belysh",
     }
@@ -90,7 +90,6 @@ const data = [
 class App extends React.Component {
   state = {
     index: Math.floor(Math.random() * 4.9),
-    // index: 0,
   }
 
   sceneRef = React.createRef()
@@ -98,27 +97,26 @@ class App extends React.Component {
   setIndex = _index => {
     this.setState({ index: _index })
     this.sceneRef?.current?.scene?.scene?.units?.head?.setIndex?.( _index )
-    console.log(this.sceneRef.current.scene.scene)
   }
 
   renderDesc = person =>
     <div className="desc">
       <div className="desc__card">
-          <i>
-        <h1 className="h1">
-            {person.name}
-        </h1>
-          </i>
-        <div className="desc__links">
-          <ExternalLink to={person.social.inst}>
-            <div className="desc__links__item desc__links__item--inst" />
-          </ExternalLink>
-          <ExternalLink to={person.social.vk}>
-            <div className="desc__links__item desc__links__item--vk" />
-          </ExternalLink>
-          <ExternalLink to={person.social.fb}>
-            <div className="desc__links__item desc__links__item--fb" />
-          </ExternalLink>
+        <div className="desc__card__title">
+          <h1 className="desc__card__title__h1">
+              {person.name}
+          </h1>
+          <div className="desc__card__title__links">
+            <ExternalLink newTab to={`https://instagram.com/${person.social.inst}`}>
+              <div className="desc__card__title__links__item desc__card__title__links__item--inst" />
+            </ExternalLink>
+            <ExternalLink newTab to={`https://vk.com/${person.social.vk}`}>
+              <div className="desc__card__title__links__item desc__card__title__links__item--vk" />
+            </ExternalLink>
+            <ExternalLink newTab to={`https://facebook.com/${person.social.fb}`}>
+              <div className="desc__card__title__links__item desc__card__title__links__item--fb" />
+            </ExternalLink>
+          </div>
         </div>
         <div className="desc__text">
           {person.text}
