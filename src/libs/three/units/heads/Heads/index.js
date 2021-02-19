@@ -9,6 +9,7 @@ import Naumov from 'models/heads/Naumov.pcd'
 import Tomilov from 'models/heads/Tomilov.pcd'
 import Belysh from 'models/heads/Belysh.pcd'
 import Khuzin from 'models/heads/Khuzin.pcd'
+import { Vector3 } from 'three'
 
 
 const array = [
@@ -21,6 +22,10 @@ const array = [
 const R = isMobile() ? 37 : 55
 const headsLength = 5
 
+const frusVec = new THREE.Vector3()
+const rotationVec = new THREE.Vector3()
+const forward = new THREE.Vector3(0, 1, 0)
+const quaternion = new THREE.Quaternion()
 
 
 export default class Heads extends Unit {
@@ -65,23 +70,31 @@ export default class Heads extends Unit {
   }
 
   animate = props => {
+    frusVec.set(
+      props.camera.near * Math.tan(props.camera.fov / 2) * -props.units.controls.mouse.alphaX,
+      props.camera.near * Math.tan(props.camera.fov / 2) * props.units.controls.mouse.alphaY / props.camera.aspect,
+      props.camera.near
+    ).add(props.camera.position)
+
     this.heads.forEach((head, index) => {
       if (head && head.rotation) {
-        // let alpha = props.frameNumber / props.maxFrameNumber * 7
-
-        // this.model && (this.model.rotation.z = (alpha + .5) * 2 * Math.PI)
-        head.rotation.x = -Math.PI / 2 - props.units.controls.mouse.alphaY
-        head.rotation.z = (.5 - props.units.controls.mouse.alphaX / 5) * 2 * Math.PI
-    
         const alpha = (headsLength + index - this.index) / headsLength * Math.PI * 2
         head.position.set(
           Math.sin(alpha) * R * 1.5 + (isMobile() ? 0 : R / 3),
           -R,
           -Math.cos(alpha) * R / 2 + R / 2
         )
-  
-        // //ANIMATION
-        // this.mixer && this.mixer.update(props.clock.getDelta()) 
+
+        // head.position.copy(frusVec)
+
+        head.rotation.x = -Math.PI / 2 - props.units.controls.mouse.alphaY
+        head.rotation.z = (.5 - props.units.controls.mouse.alphaX / 5) * 2 * Math.PI
+        // rotationVec
+        //   .copy(frusVec)
+        //   .sub(head.position)
+        //   .normalize()
+        // head.quaternion.setFromUnitVectors(forward, rotationVec)
+        // head.quaternion.copy(quaternion)
       } 
     })
   }

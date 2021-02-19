@@ -7,6 +7,7 @@ import Heads from 'libs/three/units/heads/Heads'
 import Lights from 'libs/three/units/Lights'
 import Environment from 'libs/three/units/Environment'
 import Controls from 'libs/three/units/Controls'
+import Fence from 'libs/three/units/Fence'
 
 
 class MainScene extends React.Component {
@@ -36,6 +37,10 @@ class MainScene extends React.Component {
         },
         controls: {
           unit: Controls,
+          disabled: false,
+        },
+        fence: {
+          unit: Fence,
           disabled: false,
         },
       }}
