@@ -474,17 +474,24 @@ $social-size: var(--social-size)
 
 .Loader
   @extend .abs-cover
+  width: 100vw
+  height: 120vh
+  padding-bottom: 30vh
   position: fixed
   background-color: white
   z-index: 100
+  overflow-y: scroll
   &__container
     @extend .d-flex
     @extend .flex-column
     @extend .align-items-center
   &__text
     width: 100%
-    @extend .px-4
     font-size: 1.25rem
+    @include media-breakpoint-down(md)
+      font-size: 1.1rem
+    @extend .pt-5
+    @extend .px-sm-4
     @extend .mb-5
   &__button
     @extend .button
