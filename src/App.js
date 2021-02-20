@@ -99,7 +99,7 @@ class App extends React.Component {
 
   setIndex = _index => {
     this.setState({ index: _index })
-    this.sceneRef?.current?.scene?.scene?.units?.head?.setIndex?.( _index )
+    this.sceneRef?.current?.scene?.scene?.units?.heads?.setIndex?.( _index )
   }
 
   start = () => {
@@ -111,7 +111,11 @@ class App extends React.Component {
     <div className="desc">
       <div className="desc__card">
         <div className="desc__card__title">
-          <h1 className="desc__card__title__h1">
+          <h1
+            className="desc__card__title__h1"
+            onClick={() => this.sceneRef?.current?.scene?.scene?.units?.heads?.toggleHeads?.()}
+            // onClick={() => console.log(this.sceneRef?.current?.scene)}
+          >
               {person.name}
           </h1>
           <div className="desc__card__title__links">

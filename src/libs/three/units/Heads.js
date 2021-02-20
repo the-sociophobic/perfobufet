@@ -33,6 +33,7 @@ export default class Heads extends Unit {
     super(props)
 
     this.index = this.props.react.index
+    this.openedHeads = false
 
     this.loadModel()
   }
@@ -63,12 +64,19 @@ export default class Heads extends Unit {
   
       // console.log(this.props)
       // head.cursor = 'pointer'
-      // tapEvent(head, () => this.props.react.toggleDesc())
+      // tapEvent(head, () =>
+      //   this.toggleHeads())
     })
 
     this.props.onComplete && this.props.onComplete()
 
     this.props.unitLoaded()
+  }
+
+  toggleHeads = () => {
+    this.heads.forEach(head =>
+      head.scale.multiplyScalar(this.openedHeads ? 1 / 2 : 2))
+    this.openedHeads = !this.openedHeads
   }
 
   animate = props => {
@@ -81,10 +89,12 @@ export default class Heads extends Unit {
     this.heads.forEach((head, index) => {
       if (head && head.rotation) {
         const alpha = (headsLength + index - this.index) / headsLength * Math.PI * 2
+        const radius = this.openedHeads ? (isMobile() ? R * 2.55 : 120) : R
+
         head.position.set(
-          Math.sin(alpha) * R * 1.5 + (isMobile() ? 0 : R / 3),
-          -R * .75,
-          -Math.cos(alpha) * R / 2 + R / 2
+          Math.sin(alpha) * radius * 1.5 + (isMobile() || this.openedHeads ? 0 : radius / 3),
+          this.openedHeads && !isMobile() ? -R * .85 : -R * .75,
+          -Math.cos(alpha) * radius / 2 + R / 2
         )
 
         // head.position.copy(frusVec)
@@ -95,7 +105,7 @@ export default class Heads extends Unit {
 
         head.rotation.x = -Math.PI / 2 - props.units.controls.mouse.alphaY
         head.rotation.y = alphaProgressY * .25
-        head.rotation.z = alphaProgressZ * .15 + (.5 - props.units.controls.mouse.alphaX / 5) * 2 * Math.PI
+        head.rotation.z = alphaProgressZ * .15 + (.5 - props.units.controls.mouse.alphaX / 5) * 2 * Math.PI + (this.openedHeads ? Math.PI : 0)
 
 
         // this.model.rotation.x = Math.PI + Math.sin(alpha * 15 * Math.PI)

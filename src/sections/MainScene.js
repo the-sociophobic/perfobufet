@@ -30,7 +30,7 @@ class MainScene extends React.Component {
           unit: Lego,
           disabled: false,
         },
-        head: {
+        heads: {
           unit: Heads,
           disabled: false,
         },
