@@ -42,6 +42,7 @@ export default class Model extends Unit {
     })
 
     this.props.scene.add(this.model)
+    this.props.unitLoaded()
   }
 
   animate = props => {

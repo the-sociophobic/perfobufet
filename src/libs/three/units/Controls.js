@@ -33,6 +33,8 @@ export default class Controls extends Unit {
     }
 
     // window.addEventListener('scroll', this.handleScrollDebounced, false)
+
+    props.unitLoaded()
   }
 
 

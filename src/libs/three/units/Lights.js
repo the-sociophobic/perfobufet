@@ -16,6 +16,8 @@ export default class Lowpoly extends Unit {
     scene.add( this.light0 )
     scene.add( this.light1 )
     scene.add( this.light2 )
+
+    props.unitLoaded()
   }
 
   animate = props => {}

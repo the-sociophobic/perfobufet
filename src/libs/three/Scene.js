@@ -1,10 +1,11 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
-import { Interaction } from 'three.interaction'
+// import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
+// import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
+// import { Interaction } from 'three.interaction'
 // import { EffectComposer, RenderPass } from 'postprocessing'
 
+import isProd from 'libs/utils/isProd'
 import transitionHandler from './handlers/transitionHandler'
 
 
@@ -30,6 +31,8 @@ export default class Scene extends transitionHandler {
       units: {},
       unitsToggled: false,
     }
+
+    this.numberOfLoadedUnits = 0
   }
 
   init = ViewerDiv => {
@@ -147,12 +150,36 @@ export default class Scene extends transitionHandler {
         const unit = this.props.units[unitName]
 
         if (!unit.disabled ^ this.scene.unitsToggled) {
-          this.scene.units[unitName] = new unit.unit({...props, ...unit.args})
+          this.scene.units[unitName] = new unit.unit({
+            ...props,
+            ...unit.args,
+            unitLoaded: () => this.unitLoaded(unitName),
+          })
           this.scene.units[unitName].init &&
             this.scene.units[unitName].init()
         }
       })
   }
+
+  unitLoaded = name => {
+    this.numberOfLoadedUnits++
+    !isProd() && console.log(`${name} loaded`)
+
+    if (this.numberOfLoadedUnits >= Object.keys(this.scene.units).length)
+      this.props?.setLoaded?.()
+  }
+
+  startUnits = () =>
+    Object.keys(this.scene.units)
+      .forEach(unitName => {
+        const unit = this.scene.units[unitName]
+
+        if (!unit.disabled ^ this.scene.unitsToggled)
+          unit?.start?.()
+      })
+
+  start = () =>
+    this.startUnits()
 
   disposeUnits = () => {
     const {

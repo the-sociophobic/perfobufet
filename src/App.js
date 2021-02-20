@@ -4,6 +4,8 @@ import Div100vh from 'react-div-100vh'
 import Helmet from 'components/Helmet'
 import Frame from 'components/Frame'
 import ExternalLink from 'components/ExternalLink'
+import MainScene from 'sections/MainScene'
+import Loader from 'components/Loader'
 
 import Header from 'components/Header'
 
@@ -12,7 +14,6 @@ import About from 'sections/About'
 import Closed from 'sections/Closed'
 
 import 'styles/index.sass'
-import MainScene from 'sections/MainScene'
 
 
 const data = [
@@ -90,6 +91,8 @@ const data = [
 class App extends React.Component {
   state = {
     index: Math.floor(Math.random() * 4.9),
+    loaded: false,
+    started: false,
   }
 
   sceneRef = React.createRef()
@@ -97,6 +100,11 @@ class App extends React.Component {
   setIndex = _index => {
     this.setState({ index: _index })
     this.sceneRef?.current?.scene?.scene?.units?.head?.setIndex?.( _index )
+  }
+
+  start = () => {
+    this.sceneRef?.current?.scene?.start?.()
+    this.setState({ started: true })
   }
 
   renderDesc = person =>
@@ -141,6 +149,7 @@ class App extends React.Component {
         react={{
           index: this.state.index
         }}
+        setLoaded={() => this.setState({ loaded: true })}
       />
       <div className="App">
         <Frame clouds />
@@ -166,6 +175,13 @@ class App extends React.Component {
           </div>
         </Frame>
       </div>
+
+      {!this.state.started &&
+        <Loader
+          loaded={this.state.loaded}
+          start={() => this.start()}
+        />}
+
     </Div100vh>
 }
 

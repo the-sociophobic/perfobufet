@@ -1,4 +1,5 @@
 import { PCDLoader } from 'three/examples/jsm/loaders/PCDLoader.js'
+import isProd from 'libs/utils/isProd'
 
 
 export default async (model, debug) =>
@@ -12,7 +13,7 @@ export default async (model, debug) =>
             const url = progress.srcElement.responseURL.split('/')
             const name = url[url.length - 1].split('.')
   
-            if (debug)
+            !isProd() && debug &&
               console.log(`loading ${name[0]}.${name[2]} ${Math.floor(progress.loaded / progress.total * 100)}%`)
           },
         error =>

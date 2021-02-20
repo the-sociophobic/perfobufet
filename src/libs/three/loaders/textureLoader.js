@@ -1,4 +1,6 @@
 import * as THREE from 'three'
+import isProd from 'libs/utils/isProd'
+
 
 const textureLoader = async (file, debug) =>
   new Promise((res, rej) =>
@@ -10,7 +12,7 @@ const textureLoader = async (file, debug) =>
           const url = progress.srcElement.responseURL.split('/')
           const name = url[url.length - 1].split('.')
 
-          if (debug)
+          !isProd() && debug &&
             console.log(`loading ${name[0]}.${name[2]} ${Math.floor(progress.loaded / progress.total * 100)}%`)
         },
         error =>

@@ -16,6 +16,8 @@ class Fence extends Unit {
     this.gtlf = await modelLoader(file)
     this.model = this.gtlf.scene
     this.props.scene.add(this.model)
+
+    this.props.unitLoaded()
   }
 
   animate = props => {

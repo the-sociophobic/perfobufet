@@ -20,6 +20,7 @@ export default class Fence extends Unit {
     // this.props.scene.environment.flipY = true
 
     // console.log(this.props.scene.environment)
+    this.props.unitLoaded()
   }
 
   animate = props => {}

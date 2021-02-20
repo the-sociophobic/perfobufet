@@ -54,7 +54,7 @@ $breakpoint-1024: 1024px
 .def-img
   background-repeat: no-repeat
   background-position: center
-  background-size: cover
+  background-size: contain
 
 h1, h2, h3, h4, h5, h6
   font-family: 'Cormorant-Bold'
@@ -187,12 +187,21 @@ $frame-radius: calc(#{$frame-border} / 2)
       padding-top: 88.76%
       bottom: 70%
     left: 50%
+    z-index: 1
     transform: translateX(-50%)
     background-image: url(./img/cloud.png)
-    background-position: center
     background-size: 100%
-    background-repeat: no-repeat
-    z-index: 1
+    background-repeat: repeat-x
+    background-position-x: 50%
+    background-position-y: 50%
+    animation: move 10s ease infinite
+    @keyframes move
+      0%
+        left: 35%
+      50%
+        left: 65%
+      100%
+        left: 35%
 
 .Viewer
   z-index: 10
@@ -293,7 +302,7 @@ $frame-radius: calc(#{$frame-border} / 2)
     position: relative
     z-index: 100
     width: calc(100% - #{$frame-border} * 2)
-    height: calc(100% - #{$frame-border} * 2)
+    height: calc(100% - #{$frame-border} * 3)
     margin-top: calc(#{$frame-border} * 1.5)
     margin-bottom: calc(#{$frame-border} * 1.5)
     margin-left: $frame-border
@@ -307,6 +316,41 @@ $frame-radius: calc(#{$frame-border} / 2)
   &--last
     margin-bottom: 35rem !important
 
+  &__menu
+    position: absolute
+    top: calc(#{$frame-border} / 3)
+    right: calc(#{$frame-border} / 3)
+    z-index: 1000
+    &__burger
+      @extend .def-img
+      background-image: url(./img/burger.svg)
+      width: 3rem
+      height: 3rem
+      cursor: pointer
+      position: relative
+      z-index: 1001
+      transition: transform .1s
+      .frame__menu--opened &
+        transform: rotate(90deg)
+    &__item
+      @extend .def-img
+      @extend .abs-cover
+      border-radius: 100%
+      background-color: #CEDEF5
+      z-index: 999
+      opacity: 0
+      transition: transform .15s, opacity .15s
+      &--vk
+        background-image: url(./img/social/vk.svg)
+        background-size: 60%
+        .frame__menu--opened &
+          transform: translateY(5rem)
+          opacity: 1
+      &--inst
+        background-image: url(./img/social/inst.svg)
+        .frame__menu--opened &
+          transform: translateY(10rem)
+          opacity: 1
 
 .closed
   width: 100%
@@ -397,7 +441,7 @@ $social-size: var(--social-size)
           &--inst
             background-image: url(./img/social/inst.svg)
           &--vk
-            background-image: url(https://vk.com/images/svg_icons/ic_head_logo.svg)
+            background-image: url(./img/social/vk.svg)
             background-size: 60%
           &--fb
             background-image: url(./img/social/fb.svg)
@@ -427,3 +471,29 @@ $social-size: var(--social-size)
     transition: transform .15s
 
     
+
+.Loader
+  @extend .abs-cover
+  position: fixed
+  background-color: white
+  z-index: 100
+  &__container
+    @extend .d-flex
+    @extend .flex-column
+    @extend .align-items-center
+  &__text
+    width: 100%
+    @extend .px-4
+    font-size: 1.25rem
+    @extend .mb-5
+  &__button
+    @extend .button
+    font-size: 2rem
+    padding: 1rem
+    border: $frame-width solid black
+    border-radius: .5rem
+    &:disabled
+      opacity: .25
+      cursor: not-allowed
+
+
