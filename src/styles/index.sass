@@ -232,12 +232,12 @@ $frame-radius: calc(#{$frame-border} / 2)
     background-position: center
     background-size: 100%
     transform: translateX(2%)
-    top: calc(#{$frame-border} * -.125)
+    top: calc(#{$frame-border} * -.425)
     left: calc(50% - #{$frame-border} * .75)
     width: calc(#{$frame-border} * 1.5)
     height: calc(#{$frame-border} * 1.5)
     @media screen and ( max-width: 1024px )
-      top: calc(#{$frame-border} * -.625)
+      top: calc(#{$frame-border} * -1)
       left: calc(50% - #{$frame-border} * 1.5)
       width: calc(#{$frame-border} * 3)
       height: calc(#{$frame-border} * 3)
@@ -277,7 +277,7 @@ $frame-radius: calc(#{$frame-border} / 2)
     @media screen and ( max-width: 1024px )
       left: calc(50% - #{$frame-border} * 2)
       width: calc(#{$frame-border} * 4)
-    font-size: 2.5vw
+    font-size: 42px
     font-family: 'Cormorant-Bold', sans-serif
   &::before, &::after
     content: ''
@@ -414,8 +414,8 @@ $social-size: var(--social-size)
       width: 110%
       right: 50%
       transform: translate(50%, 0)
-      bottom: -60%
-      height: 85%
+      bottom: -47%
+      height: 82%
     &__title
       @extend .d-flex
       @extend .flex-row
@@ -486,6 +486,7 @@ $social-size: var(--social-size)
     @extend .flex-column
     @extend .align-items-center
   &__text
+    text-align: center
     width: 100%
     font-size: 1.25rem
     @include media-breakpoint-down(md)

@@ -46,13 +46,13 @@ class MainScene extends React.Component {
           unit: Fence,
           disabled: false,
         },
-        music: {
-          unit: Music,
-          disabled: false,
-          args: {
-            file: PERFOBUFET
-          },
-        },
+        // music: {
+        //   unit: Music,
+        //   disabled: false,
+        //   args: {
+        //     file: PERFOBUFET
+        //   },
+        // },
       }}
     />
 }

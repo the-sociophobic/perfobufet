@@ -157,10 +157,7 @@ class App extends React.Component {
       />
       <div className="App">
         <Frame clouds />
-        <Frame clouds>
-          {this.renderDesc(data[this.state.index])}
-        </Frame>
-        <Frame className="frame--last">
+        <Frame bottom='О нас'>
           <div className="row justify-content-center">
             <div className="col-12 col-md-4 pt-4 px-4">
               Наша театральная компания ориентированана творчество в максимально широком смысле: кроме перформансов и спектаклей, мы делаем прогулки и вечеринки, лаборатории и акции, лекции и челленджи. Используя процесс создания искусства, мы пытаемся понять, как это искусство создавать, поэтому «Перфобуфет» — это эксперимент над самими собой и той культурой, которая складывается вокруг него.
@@ -177,6 +174,9 @@ class App extends React.Component {
               «Перфобуфет» — это модель нашей коллективной мечты о том, как работает театральная компания сегодня. 
             </div>
           </div>
+        </Frame>
+        <Frame clouds className="frame--last" bottom='лид груп'>
+          {this.renderDesc(data[this.state.index])}
         </Frame>
       </div>
 
