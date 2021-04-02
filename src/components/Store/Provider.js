@@ -7,6 +7,10 @@ import initialState from './initialState'
 import Context from './Context'
 
 
+//   space: 'r1hg9m75veq3',
+//   accessToken: 'cUHQvlK_jsdMBLoK3rHSllIOH7pDim4Mac-FU7wkkLg'
+
+
 const query = `
   {
     tag {
@@ -15,7 +19,7 @@ const query = `
   }
 `
 
-const query1 = `{
+const query2 = `{
   person {
     id
     name
@@ -34,12 +38,6 @@ class Provider extends React.Component {
   state = initialState
 
   cookies = new Cookies()
-
-  // client = contentful.createClient({
-  //   space: 'r1hg9m75veq3',
-  //   // environment: '<environment_id>', // defaults to 'master' if not set
-  //   accessToken: 'cUHQvlK_jsdMBLoK3rHSllIOH7pDim4Mac-FU7wkkLg'
-  // })
 
   componentDidMount = () => {
     this.loadContentful2()
