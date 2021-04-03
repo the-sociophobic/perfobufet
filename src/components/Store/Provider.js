@@ -1,36 +1,11 @@
 import React from 'react'
+import { createClient } from 'contentful'
 
 import Cookies from 'universal-cookie'
 import axios from 'axios'
 
 import initialState from './initialState'
 import Context from './Context'
-
-
-//   space: 'r1hg9m75veq3',
-//   accessToken: 'cUHQvlK_jsdMBLoK3rHSllIOH7pDim4Mac-FU7wkkLg'
-
-
-const query = `
-  {
-    tag {
-      name
-    }
-  }
-`
-
-const query2 = `{
-  person {
-    id
-    name
-    face3D {
-      fileName
-    }
-    desc {
-
-    }
-  }
-}`
 
 
 class Provider extends React.Component {
@@ -40,41 +15,28 @@ class Provider extends React.Component {
   cookies = new Cookies()
 
   componentDidMount = () => {
-    this.loadContentful2()
+    this.loadContentful()
   }
 
   loadContentful = async () => {
-    axios.defaults.headers.post['Content-Type'] = "application/json"
-    axios.defaults.headers.post['Authorization'] = "Bearer cUHQvlK_jsdMBLoK3rHSllIOH7pDim4Mac-FU7wkkLg"
-    // axios.defaults.withCredentials = true
-
-    const data = (await axios
-      .post(
-        `https://graphql.contentful.com/content/v1/spaces/r1hg9m75veq3/`,
-        { query }
-      )
-    ).data
-
-    console.log(data)
-  }
-
-  loadContentful2 = async () => {
-    window
-      .fetch(`https://graphql.contentful.com/content/v1/spaces/r1hg9m75veq3/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer cUHQvlK_jsdMBLoK3rHSllIOH7pDim4Mac-FU7wkkLg",
-        },
-        body: JSON.stringify({ query }),
+    this.client = createClient({
+        space: 'r1hg9m75veq3',
+        accessToken: 'cUHQvlK_jsdMBLoK3rHSllIOH7pDim4Mac-FU7wkkLg',
+        host: 'cdn.contentful.com'
       })
-      .then(response => response.json())
-      .then(({ data, errors }) => {
-        errors &&
-          console.error(errors);
 
-        console.log(data)
-      });
+    const entries = await this.client.getEntries()
+
+    this.setState({
+      space: await this.client.getSpace(),
+      items: entries.items.map(entry => ({
+        id: entry.sys.id,
+        type: entry.sys.contentType.sys.id,
+        ...entry.fields
+      }))
+    })
+
+    console.log(this.state)
   }
 
 
