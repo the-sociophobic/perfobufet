@@ -1,11 +1,13 @@
 import React from 'react'
-import { createClient } from 'contentful'
 
 import Cookies from 'universal-cookie'
-import axios from 'axios'
 
 import initialState from './initialState'
 import Context from './Context'
+import {
+  createContentfulClient,
+  getContentfulItems
+} from 'libs/utils/contentful'
 
 
 class Provider extends React.Component {
@@ -19,21 +21,11 @@ class Provider extends React.Component {
   }
 
   loadContentful = async () => {
-    this.client = createClient({
-        space: 'r1hg9m75veq3',
-        accessToken: 'cUHQvlK_jsdMBLoK3rHSllIOH7pDim4Mac-FU7wkkLg',
-        host: 'cdn.contentful.com'
-      })
-
-    const entries = await this.client.getEntries()
+    this.client = createContentfulClient()
 
     this.setState({
       space: await this.client.getSpace(),
-      items: entries.items.map(entry => ({
-        id: entry.sys.id,
-        type: entry.sys.contentType.sys.id,
-        ...entry.fields
-      }))
+      ...(await getContentfulItems(this.client))
     })
 
     console.log(this.state)
