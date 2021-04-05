@@ -1,6 +1,6 @@
 import { createClient } from 'contentful'
 import _ from 'lodash'
-
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const createContentfulClient = () =>
   createClient({
@@ -33,7 +33,7 @@ const getContentfulItems = async client => {
 }
 
 const parseField = field => {
-  switch(field?.data?.nodeType || field?.sys?.type) {
+  switch(field?.nodeType || field?.sys?.type) {
     case 'document':
       return parseContentfulText(field)
     case 'Asset':
@@ -43,9 +43,8 @@ const parseField = field => {
   }
 }
 
-const parseContentfulText = document => {
-  
-}
+const parseContentfulText = document =>
+  documentToReactComponents(document)
 
 export {
   createContentfulClient,

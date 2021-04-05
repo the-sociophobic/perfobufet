@@ -27,6 +27,53 @@ class Heads extends React.Component {
   toggleHeads = () =>
     this.sceneRef?.current?.scene?.scene?.units?.heads?.toggleHeads?.()
 
+  renderDesc = person =>
+    <div className="desc">
+      <div className="desc__card">
+        <div className="desc__card__title">
+          <h1
+            className="desc__card__title__h1"
+            onClick={() => this.sceneRef?.current?.scene?.scene?.units?.heads?.toggleHeads?.()}
+          >
+              {person.name}
+          </h1>
+          <div className="desc__card__title__links">
+            {person.tg &&
+              <ExternalLink newTab to={person.tg}>
+                <div className="desc__card__title__links__item desc__card__title__links__item--tg" />
+              </ExternalLink>
+            }
+            {person.inst &&
+                <ExternalLink newTab to={person.inst}>
+                <div className="desc__card__title__links__item desc__card__title__links__item--inst" />
+              </ExternalLink>
+            }
+            {person.vk &&
+                <ExternalLink newTab to={person.vk}>
+                <div className="desc__card__title__links__item desc__card__title__links__item--vk" />
+              </ExternalLink>
+            }
+            {person.fb &&
+                <ExternalLink newTab to={person.fb}>
+                <div className="desc__card__title__links__item desc__card__title__links__item--fb" />
+              </ExternalLink>
+            }
+          </div>
+        </div>
+        <div className="desc__text">
+          {person.text}
+        </div>
+      </div>
+
+      <div
+        onClick={() => this.setIndex( (this.state.index + 1) % 5 )}
+        className="desc__arrow desc__arrow--left"
+      />
+      <div
+        onClick={() => this.setIndex( (this.state.index + 4) % 5 )}
+        className="desc__arrow desc__arrow--right"
+      />
+    </div>
 
   render = () =>
     <Frame clouds className="frame--last" bottom='лид груп'>

@@ -27,16 +27,12 @@ class Provider extends React.Component {
       space: await this.client.getSpace(),
       ...(await getContentfulItems(this.client))
     })
-
-    console.log(this.state)
   }
 
 
   stateAndSetters = () => ({
     ...this.state,
     cookies: this.cookies,
-    checkUser: this.checkUser,
-    logout: this.logout,
     setState: obj => this.setState(obj),
   })
 
