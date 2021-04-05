@@ -24,7 +24,7 @@
     "react-scripts": "4.0.1",
     "resize-observer-polyfill": "^1.5.1",
     "sass": "^1.30.0",
-    "three": "^0.124.0",
+    "three": "^0.125.0",
     "three-bmfont-text": "^3.0.1",
     "three.interaction": "^0.2.3",
     "universal-cookie": "^4.0.4",
