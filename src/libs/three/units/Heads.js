@@ -100,10 +100,10 @@ export default class Heads extends Unit {
         // head.position.copy(frusVec)
 
         const alphaTime = props.frameNumber / props.maxFrameNumber
-        // const alphaProgressY = timingFunctions["easeInOutQuad"](Math.cos(alphaTime * 505 * Math.PI))
-        // const alphaProgressZ = timingFunctions["easeInOutQuad"](Math.sin(alphaTime * 505 * Math.PI))
-        const alphaProgressY = timingFunctions["easeInOutQuad"](Math.cos(12.5 * 505 * Math.PI))
-        const alphaProgressZ = timingFunctions["easeInOutQuad"](Math.sin(12.5 * 505 * Math.PI))
+        const alphaProgressY = timingFunctions["easeInOutQuad"](Math.cos(alphaTime * 249 * Math.PI))
+        const alphaProgressZ = timingFunctions["easeInOutQuad"](Math.sin(alphaTime * 249 * Math.PI))
+        // const alphaProgressY = timingFunctions["easeInOutQuad"](Math.cos(12.5 * 505 * Math.PI))
+        // const alphaProgressZ = timingFunctions["easeInOutQuad"](Math.sin(12.5 * 505 * Math.PI))
 
         head.rotation.x = -Math.PI / 2 - props.units.controls.mouse.alphaY
         head.rotation.y = alphaProgressY * .25
